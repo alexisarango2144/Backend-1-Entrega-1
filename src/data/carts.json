@@ -1,17 +1,24 @@
 [
   {
-    "id": "78c21c85-ac1d-4030-9225-b05e67f27ade",
-    "products": {
-      "0": {
-        "productId": {
-          "prod": "a29853eb-22bc-4157-afbb-a7761ef31e04"
-        },
-        "quantity": 1
+    "id": "c7bd45d2-c2b4-4098-9c72-3455a2e1ca59",
+    "products": [],
+    "owner": "guest",
+    "createdOn": "2026-01-19T21:37:52.491Z",
+    "updatedAt": "2026-01-19T21:37:52.491Z",
+    "status": true,
+    "purchased": false
+  },
+  {
+    "id": "8d41052a-115a-405c-818e-462cfea03e69",
+    "products": [
+      {
+        "product": "a29853eb-22bc-4157-afbb-a7761ef31e04",
+        "quantity": 4
       }
-    },
-    "owner": "alexisarango2144",
-    "createdOn": "2026-01-18T20:41:05.045Z",
-    "updatedAt": "2026-01-18T20:41:05.045Z",
+    ],
+    "owner": "guest",
+    "createdOn": "2026-01-19T21:54:13.559Z",
+    "updatedAt": "2026-01-19T21:54:13.559Z",
     "status": true,
     "purchased": false
   }

@@ -1,12 +1,14 @@
 import { v4 as uuidv4 } from "uuid";
 import fs from "fs";
-import productsManager from "./ProductManager.js";
+import ProductManager from "./ProductManager.js";
 
 class prodToCart {
   constructor(productId, quantity = 1) {
     if (quantity > 0) {
-      this.productId = productId;
-      this.quantity = quantity;
+      return {
+        product: productId,
+        quantity: quantity
+      }
     } else {
       return {};
     }
@@ -34,6 +36,7 @@ export default class CartManager {
   constructor(path) {
     this.path = path;
     this.carts = [];
+    this.productsManager = new ProductManager("./src/data/products.json");
 
     if (!fs.existsSync(this.path)) {
       fs.writeFileSync(this.path, "[]");
@@ -55,27 +58,26 @@ export default class CartManager {
     }
   }
 
-  async addCart(prodId, quantity = 1) {
+  async addCart(prodId = '', quantity = 1) {
     try {
       const cart = new Cart();
-      
+      this.carts.push(cart);
+
       // if (!cart.products.length) {
       //   throw new Error(
       //     "El carrito se encuentra vacío. Agregue productos al carrito para almacenarlo."
       //   );
       // }
 
-      this.addProdToCart(cart.id, prodId, quantity)
+      if (prodId) await this.addProdToCart(cart.id, ...Object.values(new prodToCart(prodId, quantity)));
 
-      const mappedCartProducts = cart.products.map((prod) => {
-        return new prodToCart({prod});
-      });
+      // const mappedCartProducts = cart.products.map((prod) => {
+      //   return new prodToCart({prod});
+      // });
 
-      const newCartProducts = mappedCartProducts.filter((prod) => Object.keys(prod).length > 0);
+      // const newCartProducts = mappedCartProducts.filter((prod) => Object.keys(prod).length > 0);
 
-      cart.products = {...newCartProducts}; 
-
-      this.carts.push(cart);
+      // cart.products = {...newCartProducts}; 
       await this.saveCarts();
       return cart;
     } catch (error) {
@@ -106,6 +108,18 @@ export default class CartManager {
     }
   }
 
+  async getProductsInCartById(id) {
+    try {
+      const cart = this.carts.find((basket) => basket.id === id);
+      if (!cart) {
+        throw new Error("El carrito no existe");
+      }
+      return cart.products;
+    } catch (error) {
+      console.error("No se encontró el carrito: ", error);
+    }
+  }
+
   async updateCartById(id, content) {
     try {
       const cart = await this.getCartById(id);
@@ -126,6 +140,7 @@ export default class CartManager {
       if (indexToUpdate === -1) {
         throw new Error("No se encontró el carrito a actualizar.");
       }
+      content.updatedAt = new Date();
       carts[indexToUpdate] = { ...cart, ...content };
       await this.saveCarts();
       return carts[indexToUpdate];
@@ -134,27 +149,27 @@ export default class CartManager {
     }
   }
 
-  async addProdToCart(cartId, prodId, quantity = 1){
+  async addProdToCart(cartId, prodId, quantity = 1) {
     const cart = await this.getCartById(cartId);
-    const product = await productsManager.getProductById(prodId);
+    const product = await this.productsManager.getProductById(prodId);
 
-    if(!product) throw new Error('No se encontró el producto');
-    
-    const prodInCart = cart.products.find((prod) => prod.productId === prodId);
+    if (!product) throw new Error('No se encontró el producto');
 
-    if(prodInCart) {
-      if(product.stock < (quantity+prodInCart.stock)) throw new Error('El stock del producto no es suficiente');
+    const prodInCart = cart.products.find((prod) => prod.product === prodId);
 
-      const indexToUpdate = await cart.products.findIndex((prod) => prod.id === id);
+    if (prodInCart) {
+      if (product.stock < (quantity + prodInCart.quantity)) throw new Error('El stock del producto no es suficiente');
+
+      const indexToUpdate = cart.products.findIndex((prod) => prod.product === prodId);
 
       cart.products[indexToUpdate].quantity += quantity;
-    }else{
-      if(product.stock < quantity) throw new Error('El stock del producto no es suficiente');
+    } else {
+      if (product.stock < quantity) throw new Error('El stock del producto no es suficiente');
 
       cart.products.push(new prodToCart(prodId, quantity))
     }
     await this.saveCarts();
-    return cart[indexToUpdate];
+    return cart;
   }
 
   async deleteCartById(id) {
@@ -181,8 +196,15 @@ console.clear();
 
 const cartManager = new CartManager("./src/data/carts.json");
 
-const newCart = new Cart(['a29853eb-22bc-4157-afbb-a7761ef31e04'], 'alexisarango2144');
+// const newCart = new Cart(['a29853eb-22bc-4157-afbb-a7761ef31e04'], 'alexisarango2144');
 
-console.log(await cartManager.addCart(newCart));
+// console.log(await cartManager.addCart('a29853eb-22bc-4157-afbb-a7761ef31e04'));
+// console.log(await cartManager.addCart());
 
-console.log(await cartManager.getCarts());
+// console.log(await cartManager.getCarts());
+// console.log(await cartManager.getProductsInCartById('8d41052a-115a-405c-818e-462cfea03e69'));
+
+console.log(await cartManager.addProdToCart(
+  "8d41052a-115a-405c-818e-462cfea03e69",
+  "a29853eb-22bc-4157-afbb-a7761ef31e04", 3
+));
