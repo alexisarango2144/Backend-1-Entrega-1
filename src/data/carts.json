@@ -1,0 +1,18 @@
+[
+  {
+    "id": "78c21c85-ac1d-4030-9225-b05e67f27ade",
+    "products": {
+      "0": {
+        "productId": {
+          "prod": "a29853eb-22bc-4157-afbb-a7761ef31e04"
+        },
+        "quantity": 1
+      }
+    },
+    "owner": "alexisarango2144",
+    "createdOn": "2026-01-18T20:41:05.045Z",
+    "updatedAt": "2026-01-18T20:41:05.045Z",
+    "status": true,
+    "purchased": false
+  }
+]

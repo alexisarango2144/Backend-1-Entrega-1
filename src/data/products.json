@@ -1,0 +1,38 @@
+[
+  {
+    "id": "de767ca0-fbde-4265-9334-b7f1ce88757e",
+    "title": "Pimienta negra",
+    "description": "Pimienta negra molida",
+    "code": "045211015",
+    "price": 8790,
+    "thumbnails": [],
+    "category": "Especias",
+    "stock": 45,
+    "status": true
+  },
+  {
+    "id": "a29853eb-22bc-4157-afbb-a7761ef31e04",
+    "title": "Comino molido",
+    "description": "Comino molido",
+    "code": "0452141",
+    "price": 4390,
+    "thumbnails": [],
+    "category": "Especias",
+    "stock": 28,
+    "status": true
+  },
+  {
+    "id": "742a61c9-658d-4dad-a492-92d3df0968fa",
+    "title": "Canela en astillas",
+    "description": "Canela en astillas lista para usar",
+    "code": "1055284",
+    "price": 5270,
+    "thumbnails": [
+      "https://eatsymarket.com/cdn/shop/files/CanelaenAstillas_1_720x.webp?v=1707746655",
+      "https://carulla.vtexassets.com/arquivos/ids/23980111/Canela-Badia-142g-Rama-887991_a.jpg?v=638986378531700000"
+    ],
+    "category": "Especias",
+    "stock": 2,
+    "status": true
+  }
+]
