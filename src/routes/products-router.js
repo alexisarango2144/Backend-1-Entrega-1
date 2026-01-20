@@ -34,7 +34,6 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const newProduct = await productsManager.addProduct(req.body);
-    console.log(req.body)
     res.json(newProduct);
   } catch (error) {
     res.status(500).send(error.message + " " + req.body);

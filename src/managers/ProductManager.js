@@ -134,16 +134,3 @@ export class ProductManager {
 console.clear();
 
 export const productsManager = new ProductManager('./src/data/products.json');
-
-
-// console.log(await productsManager.addProduct(new Product('Pimienta negra', 'Pimienta negra molida', '045211015', 8790, [], 'Especias', 45, true)));
-// console.log(await productsManager.addProduct(new Product('Comino molido', 'Comino molido', '0452141', 4390, [], 'Especias', 28, true)));
-// console.log(await productsManager.addProduct(new Product('Canela en astillas', 'Canela en astillas lista para usar', '1055284', 5270, ['https://eatsymarket.com/cdn/shop/files/CanelaenAstillas_1_720x.webp?v=1707746655','https://carulla.vtexassets.com/arquivos/ids/23980111/Canela-Badia-142g-Rama-887991_a.jpg?v=638986378531700000'], 'Especias', 2, true)));
-
-// console.log(await productsManager.getProducts());
-
-// console.log(await productsManager.getProductById('b75a36cb-038e-40f7-9f1e-a1cb16278807'));
-
-// console.log('Producto actualizado: ', await productsManager.updateProductById('cc2e1da3-92a7-4d19-b7a3-62b56fdcfb85', {status: false}))
-
-// console.log(await productsManager.hardDeleteProduct('cc2e1da3-92a7-4d19-b7a3-62b56fdcfb85'));

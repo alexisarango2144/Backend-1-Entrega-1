@@ -32,7 +32,7 @@ class Cart {
   }
 }
 
-export default class CartManager {
+export class CartManager {
   constructor(path) {
     this.path = path;
     this.carts = [];
@@ -168,6 +168,8 @@ export default class CartManager {
 
       cart.products.push(new prodToCart(prodId, quantity))
     }
+    cart.updatedAt = new Date();
+
     await this.saveCarts();
     return cart;
   }
@@ -194,17 +196,4 @@ export default class CartManager {
 
 console.clear();
 
-const cartManager = new CartManager("./src/data/carts.json");
-
-// const newCart = new Cart(['a29853eb-22bc-4157-afbb-a7761ef31e04'], 'alexisarango2144');
-
-// console.log(await cartManager.addCart('a29853eb-22bc-4157-afbb-a7761ef31e04'));
-// console.log(await cartManager.addCart());
-
-// console.log(await cartManager.getCarts());
-// console.log(await cartManager.getProductsInCartById('8d41052a-115a-405c-818e-462cfea03e69'));
-
-// console.log(await cartManager.addProdToCart(
-//   "8d41052a-115a-405c-818e-462cfea03e69",
-//   "a29853eb-22bc-4157-afbb-a7761ef31e04", 3
-// ));
+export const cartManager = new CartManager("./src/data/carts.json");

@@ -1,0 +1,227 @@
+{
+  "info": {
+    "_postman_id": "5cc5ae2c-caa8-41f1-97ac-4cd29c433c58",
+    "name": "Backend I",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "42763644"
+  },
+  "item": [
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Create cart",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "// Optional\r\n// {\r\n//     \"productId\": \"742a61c9-658d-4dad-a492-92d3df0968fa\",\r\n//     \"quantity\": \"\"\r\n// }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}{{api/carts}}/",
+              "host": [
+                "{{localhost}}{{api/carts}}"
+              ],
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cart by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{localhost}}{{api/carts}}/939a5651-d898-4586-8293-5aa57aa48930",
+              "host": [
+                "{{localhost}}{{api/carts}}"
+              ],
+              "path": [
+                "939a5651-d898-4586-8293-5aa57aa48930"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Prod to cart",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"quantity\": 3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}{{api/carts}}/939a5651-d898-4586-8293-5aa57aa48930/product/4ea0e85e-a584-476b-bc29-170e889b3763",
+              "host": [
+                "{{localhost}}{{api/carts}}"
+              ],
+              "path": [
+                "939a5651-d898-4586-8293-5aa57aa48930",
+                "product",
+                "4ea0e85e-a584-476b-bc29-170e889b3763"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{localhost}}/{{api/products}}/",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "{{api/products}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{localhost}}/{{api/products}}/",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "{{api/products}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Product",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Lubriderm crema humectante\",\r\n    \"description\": \"Crema humectante para la piel\",\r\n    \"code\": \"LB101\",\r\n    \"price\": 15000,\r\n    \"status\": true,\r\n    \"stock\": 100,\r\n    \"category\": \"Cuidado personal\",\r\n    \"thumbnails\": [\"https://mercasur.com.co/es/productos/lubriderm-crema-pial-reparacion-intensiva\",\"https://leonisa.co/cdn/shop/files/LB101_SIN_1200X1500_col_1_620x.jpg?v=1722285279\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}/{{api/products}}/",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "{{api/products}}",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Product by ID",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"Canela en astillas lista para usar\",\r\n    \"code\": \"105ASE84\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}/api/products/742a61c9-658d-4dad-a492-92d3df0968fa",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                "742a61c9-658d-4dad-a492-92d3df0968fa"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Product by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{localhost}}/api/products/b6629b19-ce60-4adc-a1d1-56c603b27bd1",
+              "host": [
+                "{{localhost}}"
+              ],
+              "path": [
+                "api",
+                "products",
+                "b6629b19-ce60-4adc-a1d1-56c603b27bd1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "localhost",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "api/products",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "api/carts",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

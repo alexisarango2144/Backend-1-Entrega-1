@@ -47,49 +47,7 @@
     "status": true
   },
   {
-    "id": "595c0edf-38d8-4e88-9ed1-43008bd6fc34",
-    "title": "Lubriderm crema humectante",
-    "description": "Crema humectante para la piel",
-    "code": "LB101",
-    "price": 15000,
-    "thumbnails": true,
-    "category": 100,
-    "stock": "Cuidado personal",
-    "status": [
-      "https://mercasur.com.co/es/productos/lubriderm-crema-pial-reparacion-intensiva",
-      "https://leonisa.co/cdn/shop/files/LB101_SIN_1200X1500_col_1_620x.jpg?v=1722285279"
-    ]
-  },
-  {
-    "id": "d78c31cc-43c0-4b71-b101-4c8efc60db18",
-    "title": "Lubriderm crema humectante",
-    "description": "Crema humectante para la piel",
-    "code": "LB101",
-    "price": 15000,
-    "thumbnails": true,
-    "category": 100,
-    "stock": "Cuidado personal",
-    "status": [
-      "https://mercasur.com.co/es/productos/lubriderm-crema-pial-reparacion-intensiva",
-      "https://leonisa.co/cdn/shop/files/LB101_SIN_1200X1500_col_1_620x.jpg?v=1722285279"
-    ]
-  },
-  {
-    "id": "97304a03-4df8-4792-8eb7-3cb7ced71d80",
-    "title": "Lubriderm crema humectante",
-    "description": "Crema humectante para la piel",
-    "code": "LB101",
-    "price": 15000,
-    "thumbnails": [
-      "https://mercasur.com.co/es/productos/lubriderm-crema-pial-reparacion-intensiva",
-      "https://leonisa.co/cdn/shop/files/LB101_SIN_1200X1500_col_1_620x.jpg?v=1722285279"
-    ],
-    "category": "Cuidado personal",
-    "stock": 100,
-    "status": true
-  },
-  {
-    "id": "042d0d18-22b4-4bbd-aa69-c9df33776349",
+    "id": "77728a0e-1fca-4c29-99ec-ce16ef5decfa",
     "title": "Lubriderm crema humectante",
     "description": "Crema humectante para la piel",
     "code": "LB101",
