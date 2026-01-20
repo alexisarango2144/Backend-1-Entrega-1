@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import fs from "fs";
-import ProductManager from "./ProductManager.js";
+import { productsManager } from "./ProductManager.js";
 
 class prodToCart {
   constructor(productId, quantity = 1) {
@@ -36,7 +36,7 @@ export default class CartManager {
   constructor(path) {
     this.path = path;
     this.carts = [];
-    this.productsManager = new ProductManager("./src/data/products.json");
+    // this.productsManager = new ProductManager("./src/data/products.json");
 
     if (!fs.existsSync(this.path)) {
       fs.writeFileSync(this.path, "[]");
@@ -151,7 +151,7 @@ export default class CartManager {
 
   async addProdToCart(cartId, prodId, quantity = 1) {
     const cart = await this.getCartById(cartId);
-    const product = await this.productsManager.getProductById(prodId);
+    const product = await productsManager.getProductById(prodId);
 
     if (!product) throw new Error('No se encontró el producto');
 
@@ -204,7 +204,7 @@ const cartManager = new CartManager("./src/data/carts.json");
 // console.log(await cartManager.getCarts());
 // console.log(await cartManager.getProductsInCartById('8d41052a-115a-405c-818e-462cfea03e69'));
 
-console.log(await cartManager.addProdToCart(
-  "8d41052a-115a-405c-818e-462cfea03e69",
-  "a29853eb-22bc-4157-afbb-a7761ef31e04", 3
-));
+// console.log(await cartManager.addProdToCart(
+//   "8d41052a-115a-405c-818e-462cfea03e69",
+//   "a29853eb-22bc-4157-afbb-a7761ef31e04", 3
+// ));

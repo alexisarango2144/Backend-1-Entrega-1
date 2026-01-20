@@ -15,7 +15,7 @@ class Product {
     }
   } 
 
-export default class ProductManager {
+export class ProductManager {
   constructor(path) {
     this.path = path;
     this.products = [];
@@ -32,7 +32,7 @@ export default class ProductManager {
     try {
       await fs.promises.writeFile(this.path, JSON.stringify(this.products, null, 2), 'utf-8');
     } catch (error) {
-      console.error('Ocurrió un error al almacenar la información', error)
+      console.error('Ocurrió un error al almacenar la información:' + error)
     }
   }
 
@@ -41,13 +41,23 @@ export default class ProductManager {
       if (!product.title || !product.description || !product.code || !product.price || !product.stock) {
         throw new Error("Faltan campos obligatorios");
       }
-   
-      this.products.push(product);
+      
+      const newProduct = new Product(
+        product.title,
+        product.description,
+        product.code,
+        product.price,
+        product.thumbnails,
+        product.category,
+        product.stock,
+        product.status
+      );
+      this.products.push(newProduct);
       // fs.writeFileSync(this.path, JSON.stringify(this.products));
       await this.saveProducts();
-      return product;
+      return newProduct;
     } catch (error) {
-      throw new Error("Error creando el producto", error);
+      throw new Error("Error creando el producto: " + error);
     }
   }
 
@@ -58,7 +68,7 @@ export default class ProductManager {
       }
       return this.products;
     } catch (error) {
-      throw new Error('Ocurrió un error obteniendo los productos: ', error);
+      throw new Error('Ocurrió un error obteniendo los productos: ' + error);
     }
   }
 
@@ -70,7 +80,7 @@ export default class ProductManager {
       }
       return product;
     } catch (error) {
-      throw new Error('Ocurrió un error obteniendo el producto: ', error.message);
+      throw new Error('Ocurrió un error obteniendo el producto: ' + error);
     }
   }
 
@@ -91,7 +101,7 @@ export default class ProductManager {
       await this.saveProducts();
       return products[indexToUpdate];
     } catch (error) {
-      throw new Error("Ocurrió un error actualizando el producto: ", error)
+      throw new Error("Ocurrió un error actualizando el producto: " + error)
     }
   }
 
@@ -100,7 +110,7 @@ export default class ProductManager {
       await this.updateProductById(id, {status: false});
       return 'Producto eliminado con éxito.';
     } catch (error) {
-      throw new Error('Ocurrió un error realizando el eliminado lógico del producto: ', error)
+      throw new Error('Ocurrió un error realizando el eliminado lógico del producto: ' + error)
     }
   }
 
@@ -116,7 +126,7 @@ export default class ProductManager {
       await this.saveProducts();
       return 'Producto eliminado permanentemente.';
     } catch (error) {
-      throw new Error('Ocurrió un error realizando el eliminado definitivo del producto: ', error)
+      throw new Error('Ocurrió un error realizando el eliminado definitivo del producto: ' + error)
     }
   }
 }

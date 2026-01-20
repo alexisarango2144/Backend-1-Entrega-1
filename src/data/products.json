@@ -1,31 +1,23 @@
 [
   {
-    "id": "de767ca0-fbde-4265-9334-b7f1ce88757e",
-    "title": "Pimienta negra",
-    "description": "Pimienta negra molida",
-    "code": "045211015",
-    "price": 8790,
-    "thumbnails": [],
-    "category": "Especias",
-    "stock": 45,
-    "status": true
-  },
-  {
     "id": "a29853eb-22bc-4157-afbb-a7761ef31e04",
     "title": "Comino molido",
     "description": "Comino molido",
     "code": "0452141",
     "price": 4390,
-    "thumbnails": [],
+    "thumbnails": [
+      "https://puertodeoriente.es/cdn/shop/articles/Bea-comino-1-2_d969ae4b-eda1-4723-939a-100021322279_1200x.jpg?v=1737727544",
+      "https://latiendadeclemente.com/wp-content/uploads/2024/10/COMINO_MOLIDO_70G_LATIENDADECLEMENTE.jpg"
+    ],
     "category": "Especias",
-    "stock": 28,
+    "stock": 98,
     "status": true
   },
   {
     "id": "742a61c9-658d-4dad-a492-92d3df0968fa",
     "title": "Canela en astillas",
     "description": "Canela en astillas lista para usar",
-    "code": "1055284",
+    "code": "105ASE84",
     "price": 5270,
     "thumbnails": [
       "https://eatsymarket.com/cdn/shop/files/CanelaenAstillas_1_720x.webp?v=1707746655",
@@ -33,6 +25,81 @@
     ],
     "category": "Especias",
     "stock": 2,
+    "status": true
+  },
+  {
+    "id": "4ea0e85e-a584-476b-bc29-170e889b3763",
+    "title": [
+      "Lubriderm crema humectante",
+      "Crema humectante para la piel",
+      "LB101",
+      15000,
+      true,
+      100,
+      "Cuidado personal",
+      [
+        "https://mercasur.com.co/es/productos/lubriderm-crema-pial-reparacion-intensiva",
+        "https://leonisa.co/cdn/shop/files/LB101_SIN_1200X1500_col_1_620x.jpg?v=1722285279"
+      ]
+    ],
+    "thumbnails": [],
+    "category": null,
+    "status": true
+  },
+  {
+    "id": "595c0edf-38d8-4e88-9ed1-43008bd6fc34",
+    "title": "Lubriderm crema humectante",
+    "description": "Crema humectante para la piel",
+    "code": "LB101",
+    "price": 15000,
+    "thumbnails": true,
+    "category": 100,
+    "stock": "Cuidado personal",
+    "status": [
+      "https://mercasur.com.co/es/productos/lubriderm-crema-pial-reparacion-intensiva",
+      "https://leonisa.co/cdn/shop/files/LB101_SIN_1200X1500_col_1_620x.jpg?v=1722285279"
+    ]
+  },
+  {
+    "id": "d78c31cc-43c0-4b71-b101-4c8efc60db18",
+    "title": "Lubriderm crema humectante",
+    "description": "Crema humectante para la piel",
+    "code": "LB101",
+    "price": 15000,
+    "thumbnails": true,
+    "category": 100,
+    "stock": "Cuidado personal",
+    "status": [
+      "https://mercasur.com.co/es/productos/lubriderm-crema-pial-reparacion-intensiva",
+      "https://leonisa.co/cdn/shop/files/LB101_SIN_1200X1500_col_1_620x.jpg?v=1722285279"
+    ]
+  },
+  {
+    "id": "97304a03-4df8-4792-8eb7-3cb7ced71d80",
+    "title": "Lubriderm crema humectante",
+    "description": "Crema humectante para la piel",
+    "code": "LB101",
+    "price": 15000,
+    "thumbnails": [
+      "https://mercasur.com.co/es/productos/lubriderm-crema-pial-reparacion-intensiva",
+      "https://leonisa.co/cdn/shop/files/LB101_SIN_1200X1500_col_1_620x.jpg?v=1722285279"
+    ],
+    "category": "Cuidado personal",
+    "stock": 100,
+    "status": true
+  },
+  {
+    "id": "042d0d18-22b4-4bbd-aa69-c9df33776349",
+    "title": "Lubriderm crema humectante",
+    "description": "Crema humectante para la piel",
+    "code": "LB101",
+    "price": 15000,
+    "thumbnails": [
+      "https://mercasur.com.co/es/productos/lubriderm-crema-pial-reparacion-intensiva",
+      "https://leonisa.co/cdn/shop/files/LB101_SIN_1200X1500_col_1_620x.jpg?v=1722285279"
+    ],
+    "category": "Cuidado personal",
+    "stock": 100,
     "status": true
   }
 ]
