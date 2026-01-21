@@ -17,7 +17,7 @@
     "id": "742a61c9-658d-4dad-a492-92d3df0968fa",
     "title": "Canela en astillas",
     "description": "Canela en astillas lista para usar",
-    "code": "105ASE84",
+    "code": "105ASE4",
     "price": 5270,
     "thumbnails": [
       "https://eatsymarket.com/cdn/shop/files/CanelaenAstillas_1_720x.webp?v=1707746655",
@@ -39,6 +39,20 @@
     ],
     "category": "Cuidado personal",
     "stock": 100,
+    "status": true
+  },
+  {
+    "id": "18c7c229-060d-49d5-9699-d6395b8fac82",
+    "title": "Lubriderm crema humectante dorada",
+    "description": "Crema humectante para la piel medicada",
+    "code": "LB101-01",
+    "price": 18000,
+    "thumbnails": [
+      "https://mercasur.com.co/es/productos/lubriderm-crema-pial-reparacion-intensiva",
+      "https://leonisa.co/cdn/shop/files/LB101_SIN_1200X1500_col_1_620x.jpg?v=1722285279"
+    ],
+    "category": "Cuidado personal",
+    "stock": 67,
     "status": true
   }
 ]

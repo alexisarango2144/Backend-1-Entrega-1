@@ -74,6 +74,7 @@ export class ProductManager {
 
   async getProductById(id) {
     try {
+      id = id.toString().trim();
       const product = this.products.find((product) => product.id === id);
       if (!product) {
         throw new Error("Producto no encontrado");
@@ -86,6 +87,7 @@ export class ProductManager {
 
   async updateProductById(id, content) {
     try {
+      id = id.toString().trim();
       const product = await this.getProductById(id);
       if(!product) throw new Error("Producto no encontrado");
 
@@ -107,6 +109,7 @@ export class ProductManager {
 
   async softDeleteProduct(id) {
     try {
+      id = id.toString().trim();
       await this.updateProductById(id, {status: false});
       return 'Producto eliminado con éxito.';
     } catch (error) {
@@ -116,6 +119,7 @@ export class ProductManager {
 
   async hardDeleteProduct(id) {
     try {
+      id = id.toString().trim();
       const product = await this.getProductById(id);
       if(!product) throw new Error("No se encontró el item a eliminar.")
       const products = await this.getProducts();

@@ -60,6 +60,7 @@ export class CartManager {
 
   async addCart(prodId = '', quantity = 1) {
     try {
+      prodId = prodId.toString().trim();
       const cart = new Cart();
       this.carts.push(cart);
 
@@ -98,6 +99,7 @@ export class CartManager {
 
   async getCartById(id) {
     try {
+      id = id.toString().trim();
       const cart = this.carts.find((basket) => basket.id === id);
       if (!cart) {
         throw new Error("El carrito no existe");
@@ -110,6 +112,7 @@ export class CartManager {
 
   async getProductsInCartById(id) {
     try {
+      id = id.toString().trim();
       const cart = this.carts.find((basket) => basket.id === id);
       if (!cart) {
         throw new Error("El carrito no existe");
@@ -122,6 +125,7 @@ export class CartManager {
 
   async updateCartById(id, content) {
     try {
+      id = id.toString().trim();
       const cart = await this.getCartById(id);
       if (!cart) throw new Error("Carrito no encontrado");
 
@@ -150,6 +154,7 @@ export class CartManager {
   }
 
   async addProdToCart(cartId, prodId, quantity = 1) {
+    cartId = cartId.toString().trim();
     const cart = await this.getCartById(cartId);
     const product = await productsManager.getProductById(prodId);
 
@@ -176,6 +181,7 @@ export class CartManager {
 
   async deleteCartById(id) {
     try {
+      id = id.toString().trim();
       const cart = await this.getCartById(id);
       const carts = this.carts;
 
